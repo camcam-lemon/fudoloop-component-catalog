@@ -1,17 +1,19 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
+const PRODUCTION = process.env.NODE_ENV === 'production';
+
 module.exports = {
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
         use: [
-          // {
-          //   loader: require.resolve('ts-loader'),
-          //   options: {
-          //     transpileOnly: true,
-          //   },
-          // },
+          {
+            loader: require.resolve('ts-loader'),
+            options: {
+              transpileOnly: true,
+            },
+          },
           {
             loader: require.resolve('react-docgen-typescript-loader'),
           },
@@ -22,12 +24,14 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
-  plugins: [
-    new ForkTsCheckerWebpackPlugin({
-      async: true,
-      //   eslint: true,
-      watch: '../src',
-      tsconfig: '../',
-    }),
-  ],
+  plugins: PRODUCTION
+    ? []
+    : [
+        new ForkTsCheckerWebpackPlugin({
+          async: true,
+          //   eslint: true,
+          watch: '../src',
+          tsconfig: '../',
+        }),
+      ],
 };

@@ -1,6 +1,16 @@
 import React from 'react';
 
-type Props = {} & JSX.IntrinsicElements['button'];
+type Props = {
+  /** 表示するテキスト */
+  text: string;
+  /**
+   * true: テキスト表示 false: テキスト非表示
+   * @default false
+   */
+  flag?: boolean;
+  /** ボタンを押した時のイベントハンドラ */
+  action(): void;
+} & JSX.IntrinsicElements['button'];
 
 function Button({ children, ...props }: Props) {
   return (
