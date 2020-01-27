@@ -1,0 +1,18 @@
+import { action } from '@storybook/addon-actions';
+import { Story, Meta, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import Button from '../components/Button/shared/base';
+
+<Meta title="hoge" component={Button} />
+
+# Button
+
+何の変哲もない、ただのボタン。
+<>
+<Preview withSource="open">
+  <Story name="basic">
+    <Button onClick={action('clicked')}>click me!</Button>
+  </Story>
+</Preview>
+<Props of="." />
+</>

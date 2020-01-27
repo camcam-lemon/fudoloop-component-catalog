@@ -1,7 +1,3 @@
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-
-const PRODUCTION = process.env.NODE_ENV === 'production';
-
 module.exports = {
   module: {
     rules: [
@@ -24,14 +20,4 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
-  plugins: PRODUCTION
-    ? []
-    : [
-        new ForkTsCheckerWebpackPlugin({
-          async: true,
-          //   eslint: true,
-          watch: '../src',
-          tsconfig: '../',
-        }),
-      ],
 };
