@@ -1,19 +1,41 @@
-const custom = require('./webpack.config.js');
-
 module.exports = {
-  stories: ['../src/**/stories/*.stories.tsx'],
-  webpackFinal: async (config, { configType }) => {
-    return {
-      ...config,
-      module: {
-        rules: [...config.module.rules, ...custom.module.rules],
+  stories: ['../src/**/stories/**/*.stories.tsx'],
+  webpackFinal: async config => {
+    config.module.rules.push(
+      {
+        test: /\.(ts|tsx)$/,
+        use: [
+          {
+            loader: require.resolve('ts-loader'),
+            options: {
+              transpileOnly: true,
+            },
+          },
+          {
+            loader: require.resolve('react-docgen-typescript-loader'),
+          },
+        ],
       },
-      resolve: {
-        ...config.resolve,
-        extensions: [...config.resolve.extensions, ...custom.resolve.extensions],
+      {
+        test: /\.stories\.tsx?$/,
+        loaders: [
+          {
+            loader: require.resolve('@storybook/source-loader'),
+            options: { parser: 'typescript' },
+          },
+        ],
+        enforce: 'pre',
       },
-      plugins: [...config.plugins, ...custom.plugins],
-    };
+    );
+    config.resolve.extensions.push('.ts', '.tsx');
+    return config;
   },
-  addons: ['@storybook/addon-actions', '@storybook/addon-links'],
+  addons: [
+    '@storybook/preset-create-react-app',
+    '@storybook/addon-actions/register',
+    '@storybook/addon-links/register',
+    '@storybook/addon-knobs/register',
+    '@storybook/addon-viewport/register',
+    '@storybook/addon-storysource/register',
+  ],
 };
