@@ -5,9 +5,8 @@ export const safetyNumberToString = (prop?: string | number) => {
 
 export const createViewBox = (prop?: string | number) => {
   if (!prop) return '0 0 0 0';
-  if (typeof prop === 'number') {
-    return `0 0 ${prop} ${prop}`;
-  }
+  if (typeof prop === 'number') return `0 0 ${prop} ${prop}`;
+
   const size = prop.replace(/[^0-9]/g, '');
   return `0 0 ${size} ${size}`;
 };
@@ -25,5 +24,3 @@ export const incompleteNode = (node: React.ReactNode) => {
       return false;
   }
 };
-
-var x = 1;

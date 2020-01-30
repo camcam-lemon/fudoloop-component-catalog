@@ -1,21 +1,6 @@
 import { GRAY, BLUE, GREEN, YELLOW, WHITE, NAVY, Color, ColorPreset } from '../../colors';
 
-export const getSvgColor = (
-  disabled?: boolean,
-  fill?: React.CSSProperties['fill'],
-  color?: Color,
-) => {
-  if (disabled) {
-    return GRAY.hover;
-  }
-  if (fill) {
-    return fill;
-  }
-  if (color) {
-    return getButtonColorPreset(color).default;
-  }
-  return WHITE;
-};
+type Variant = 'contained' | 'outlined' | 'text';
 
 export const getButtonColorPreset = (color: Color) => {
   switch (color) {
@@ -32,7 +17,19 @@ export const getButtonColorPreset = (color: Color) => {
   }
 };
 
-type Variant = 'contained' | 'outlined' | 'text';
+export const getSvgColor = (
+  disabled?: boolean,
+  fill?: React.CSSProperties['fill'],
+  color?: Color,
+) => {
+  if (disabled) return GRAY.hover;
+
+  if (fill) return fill;
+
+  if (color) return getButtonColorPreset(color).default;
+
+  return WHITE;
+};
 
 export const getFontColor = (color: Color) => {
   if (color === 'gray' || color === 'yellow') return NAVY.dark;

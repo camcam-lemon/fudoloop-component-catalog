@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Color } from '../../colors';
 import { getSvgColor } from '../util';
@@ -13,7 +14,7 @@ export type IconProps = {
   disabled?: boolean;
   /** アイコンのカスタムカラー */
   fill?: string;
-  /** アイコンのサイズ*/
+  /** アイコンのサイズ */
   size?: string | number;
   /** svgに指定するスタイル */
   styles?: React.CSSProperties;
@@ -35,7 +36,7 @@ function Logout({ color, disabled = false, fill, size = '30px', styles }: IconPr
       <title>logout</title>
       <desc>Created with Sketch.</desc>
       <g id="logout" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-        <rect x="0" y="0" width="27" height="27"></rect>
+        <rect x="0" y="0" width="27" height="27" />
         <g
           id="logout_icon"
           transform="translate(7.000000, 6.000000)"
@@ -47,12 +48,12 @@ function Logout({ color, disabled = false, fill, size = '30px', styles }: IconPr
             id="Rectangle-3"
             fillRule="nonzero"
             transform="translate(8.000000, 7.000000) rotate(-45.000000) translate(-8.000000, -7.000000) "
-          ></path>
+          />
           <path
             d="M12.5,12.5 L3,12.5 C2.17157288,12.5 1.5,11.8284271 1.5,11 L1.50082993,2.97120348 L1.5100666,2.82569246 C1.59749534,2.07295965 2.23658968,1.5 3,1.5 L12.5,1.5 L12.5,1 C12.5,0.723857625 12.2761424,0.5 12,0.5 L1,0.5 C0.723857625,0.5 0.5,0.723857625 0.5,1 L0.5,13 C0.5,13.2761424 0.723857625,13.5 1,13.5 L12,13.5 C12.2761424,13.5 12.5,13.2761424 12.5,13 L12.5,12.5 Z"
             id="Combined-Shape"
-            stroke="#FFFFFF"
-          ></path>
+            stroke={fillColor}
+          />
         </g>
       </g>
     </svg>

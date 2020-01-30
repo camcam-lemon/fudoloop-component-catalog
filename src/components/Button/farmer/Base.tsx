@@ -12,7 +12,7 @@ export type ButtonProps = {
   disabled?: boolean;
   /** クリック時に実行する関数 */
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  /**ボタンのテキスト */
+  /** ボタンのテキスト */
   children?: string;
   /** その他のボタンprops */
   //   buttonProps?: JSX.IntrinsicElements['button'];

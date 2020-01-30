@@ -74,7 +74,7 @@ export const コンテインボタン = () => (
       入荷予定量
     </IconButton>
     <Margin />
-    <IconButton variant="contained" color="yellow" fontColor={WHITE} onClick={action('clicked')}>
+    <IconButton variant="contained" color="yellow" onClick={action('clicked')}>
       <LogoutIcon />
       ログアウト
     </IconButton>

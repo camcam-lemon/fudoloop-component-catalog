@@ -17,12 +17,12 @@ export type FabAddProps = {
    * */
   left?: number | string;
   /** 画面下部から移動する数値
-   * number型を指定した場合はpx値に変換されます*/
+   * number型を指定した場合はpx値に変換されます */
   bottom?: number | string;
   /** クリック時に実行する関数 */
 
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  /**ボタンのテキスト */
+  /** ボタンのテキスト */
   //   buttonProps?: JSX.IntrinsicElements['button'];
 };
 

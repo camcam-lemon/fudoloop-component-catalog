@@ -8,14 +8,15 @@ type ButtonProps = {
   disabled?: boolean;
   /** クリック時に実行する関数 */
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  /**ボタンのテキスト */
+  /** ボタンのテキスト */
   children?: string;
-  /** その他のボタンprops */
+  /** その他のボタンpross */
 };
 
 function BaseButton({ disabled, onClick, children, ...props }: ButtonProps) {
   const colors = getButtonColorPreset('gray');
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <Button colors={colors} onClick={onClick} disabled={disabled} {...props}>
       {children}
     </Button>

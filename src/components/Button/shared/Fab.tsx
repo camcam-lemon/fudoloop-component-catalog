@@ -12,7 +12,7 @@ type FabProps = {
   disabled?: boolean;
   /** クリック時に実行する関数 */
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  /**ボタンのテキスト */
+  /** ボタンのテキスト */
   children?: string;
 };
 
