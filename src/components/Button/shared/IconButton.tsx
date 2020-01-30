@@ -6,24 +6,37 @@ import { getButtonColorPreset, getFontColor, variantBgColor, incompleteNode } fr
 export type Variant = 'contained' | 'outlined' | 'text';
 
 export type IconButtonProps = {
+  /** fudoloopカラー */
   color?: Color;
+  /** テキストのカラー
+   * 指定するとアイコンの色も変わる
+   */
   fontColor?: string;
+  /** 使用可否 */
   disabled?: boolean;
+  /** ボタンの種別
+   * text : 背景透過でボーダー無しのボタン
+   * outlined : 背景透過でボーダー有りのボタン
+   * contained : 背景とシャドウ有りのボタン
+   */
   variant?: Variant;
+  /** クリック時に実行する関数 */
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  /** ボタンに表示する要素 */
   children?: React.ReactNode;
 };
 
 const forceEditSvgFillColor = (fontColor?: string, children?: React.ReactNode) => {
   if (!children) return null;
-  if (!Array.isArray(children) && !incompleteNode(children)) {
+  if (!Array.isArray(children)) {
+    if (incompleteNode(children)) return children;
     const obj = { ...(children as React.ReactElement) };
     return {
       ...obj,
-      props: { ...obj.props, fill: fontColor },
+      props: { ...obj.props, fill: obj.props.fontColor || fontColor },
     };
   }
-  return (children as React.ReactNodeArray).map(node => {
+  return children.map(node => {
     if (incompleteNode(node)) return node;
     const obj = { ...(node as React.ReactElement) };
     return {
