@@ -4,7 +4,7 @@ import { NAVY } from '../../colors';
 import SettingIcon from '../../components/Icons/Setting';
 
 export default {
-  title: 'Icon/Setting',
+  title: 'Icon/設定',
   component: SettingIcon,
 };
 

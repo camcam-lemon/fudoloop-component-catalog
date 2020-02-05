@@ -4,7 +4,7 @@ import { NAVY } from '../../colors';
 import VegitableIcon from '../../components/Icons/Vegitable';
 
 export default {
-  title: 'Icon/Vegitable',
+  title: 'Icon/野菜',
   component: VegitableIcon,
 };
 

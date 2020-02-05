@@ -4,7 +4,7 @@ import { NAVY } from '../../colors';
 import InformationIcon from '../../components/Icons/Information';
 
 export default {
-  title: 'Icon/Information',
+  title: 'Icon/情報',
   component: InformationIcon,
 };
 

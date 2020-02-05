@@ -1,0 +1,15 @@
+import React from 'react';
+import { NAVY } from '../../colors';
+
+import ArrowUpIcon from '../../components/Icons/ArrowUp';
+
+export default {
+  title: 'Icon/上矢印',
+  component: ArrowUpIcon,
+};
+
+export const 上矢印アイコン = () => (
+  <div style={{ backgroundColor: NAVY.dark }}>
+    <ArrowUpIcon color="green" />
+  </div>
+);

@@ -4,7 +4,7 @@ import { NAVY } from '../../colors';
 import LogoutIcon from '../../components/Icons/Logout';
 
 export default {
-  title: 'Icon/Logout',
+  title: 'Icon/ログアウト',
   component: LogoutIcon,
 };
 
