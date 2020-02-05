@@ -6,6 +6,8 @@ import { GRAY, NAVY, ColorPreset } from '../../../colors';
 type ButtonProps = {
   /** 使用可否 */
   disabled?: boolean;
+  /** スタイリング */
+  style?: React.CSSProperties;
   /** クリック時に実行する関数 */
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /** ボタンのテキスト */
@@ -24,7 +26,7 @@ function BaseButton({ disabled, onClick, children, ...props }: ButtonProps) {
 }
 
 const Button = styled.button<{ colors: ColorPreset; disabled?: boolean }>`
-  width: 120px;
+  min-width: 120px;
   height: 36px;
   border: solid 1px ${GRAY.hover};
   border-radius: 6px;
