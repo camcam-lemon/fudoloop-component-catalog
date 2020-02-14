@@ -69,7 +69,7 @@ const Anchor = styled.a<{ disabled: boolean; margin: string }>`
   color: ${({ disabled }) => (disabled ? GRAY.hover : NAVY.default)};
   border-radius: 36px;
   text-decoration: none;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
 `;
 const Container = styled.div<{ reported?: boolean }>`
   display: inline-flex;
