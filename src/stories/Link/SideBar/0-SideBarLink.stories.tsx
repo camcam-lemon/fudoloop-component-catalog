@@ -48,7 +48,10 @@ export const 新着報告件数 = () => (
       スティックセニョール
     </Link>
     <Link href="#link--サイドバーリンク" quantity={10000}>
-      ブラウンマッシュルーム・ムッシュシャンピニオン
+      きゃべつ
+    </Link>
+    <Link href="#link--サイドバーリンク" quantity={999999}>
+      ピーマン
     </Link>
   </div>
 );

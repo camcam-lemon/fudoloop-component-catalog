@@ -18,6 +18,14 @@ type Props = {
   children?: React.ReactNode;
 };
 
+const adjustPosition = (quantity: number) => {
+  const { length } = String(quantity);
+  let base = -10;
+  if (length > 3) base -= (length - 3) * 4;
+
+  return `${base}px`;
+};
+
 function SideBarLink({
   color = 'green',
   href,
@@ -29,7 +37,7 @@ function SideBarLink({
   const colors = getColorPreset(color);
 
   return (
-    <div style={{ position: 'relative' }}>
+    <Container>
       <Anchor
         href={disabled ? undefined : href}
         colors={colors}
@@ -38,11 +46,14 @@ function SideBarLink({
       >
         {children}
       </Anchor>
-      {quantity && <Circle>{quantity}</Circle>}
-    </div>
+      {quantity && <Circle quantity={quantity}>{quantity}</Circle>}
+    </Container>
   );
 }
 
+const Container = styled.div`
+  position: relative;
+`;
 const Anchor = styled.a<{ colors: ColorPreset; active: boolean; disabled: boolean }>`
   display: inline-block;
   width: 216px;
@@ -67,7 +78,7 @@ const Anchor = styled.a<{ colors: ColorPreset; active: boolean; disabled: boolea
     color: ${({ colors, disabled }) => (disabled ? GRAY.hover : colors.font)};
   }
 `;
-const Circle = styled.div`
+const Circle = styled.div<{ quantity: number }>`
   position: absolute;
   display: inline-flex;
   height: 20px;
@@ -76,7 +87,7 @@ const Circle = styled.div`
   font-weight: bold;
   border-radius: 50%;
   top: 15px;
-  right: -10px;
+  right: ${({ quantity }) => adjustPosition(quantity)};
   background-color: ${RED.default};
   color: ${WHITE};
   opacity: 0.8;
@@ -84,6 +95,8 @@ const Circle = styled.div`
   align-items: center;
   cursor: default;
 `;
+Container.displayName = 'Container';
 Anchor.displayName = 'Anchor';
+Circle.displayName = 'Circle';
 
 export default SideBarLink;
