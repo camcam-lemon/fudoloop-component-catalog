@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GRAY, Color, OVERLAY, ColorPreset } from '../../../colors';
-import { getButtonColorPreset, getFontColor, variantBgColor, incompleteNode } from '../../util';
+import { getColorPreset, variantBgColor, incompleteNode } from '../../util';
 
 export type Variant = 'contained' | 'outlined' | 'text';
 
@@ -54,8 +54,8 @@ function IconButton({
   onClick,
   children,
 }: IconButtonProps) {
-  const colors = getButtonColorPreset(color);
-  const fontColor = pFC || getFontColor(color);
+  const colors = getColorPreset(color);
+  const fontColor = pFC || colors.font;
 
   return (
     <Button

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getButtonColorPreset, getFontColor } from '../../util/getColorPreset';
+import { getColorPreset } from '../../util/getColorPreset';
 import { GRAY, ColorPreset } from '../../../colors';
 
 type Color = 'gray' | 'blue' | 'green' | 'yellow';
@@ -25,16 +25,15 @@ function SalerAdminBaseButton({
   children,
   ...props
 }: ButtonProps) {
-  const colors = getButtonColorPreset(color);
-  const fontColor = getFontColor(color);
+  const colors = getColorPreset(color);
   return (
-    <Button colors={colors} fontColor={fontColor} onClick={onClick} disabled={disabled} {...props}>
+    <Button colors={colors} onClick={onClick} disabled={disabled} {...props}>
       {children}
     </Button>
   );
 }
 
-const Button = styled.button<{ colors: ColorPreset; fontColor: string; disabled?: boolean }>`
+const Button = styled.button<{ colors: ColorPreset; disabled?: boolean }>`
   font-family: Hiragino Sans;
   font-size: 1rem;
   width: 216px;
@@ -42,7 +41,7 @@ const Button = styled.button<{ colors: ColorPreset; fontColor: string; disabled?
   border-radius: 6px;
   background-color: ${({ colors }) => colors.default};
   border: ${({ colors, disabled }) => (disabled ? 'none' : `1px solid ${colors.default}`)};
-  color: ${({ fontColor }) => fontColor};
+  color: ${({ colors }) => colors.font};
   cursor: pointer;
 
   :disabled {

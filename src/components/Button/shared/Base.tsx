@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getButtonColorPreset } from '../../util/getColorPreset';
+import { getColorPreset } from '../../util/getColorPreset';
 import { GRAY, NAVY, ColorPreset } from '../../../colors';
 
 type ButtonProps = {
@@ -16,7 +16,7 @@ type ButtonProps = {
 };
 
 function BaseButton({ disabled, onClick, children, ...props }: ButtonProps) {
-  const colors = getButtonColorPreset('gray');
+  const colors = getColorPreset('gray');
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Button colors={colors} onClick={onClick} disabled={disabled} {...props}>

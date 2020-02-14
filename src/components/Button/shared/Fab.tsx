@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getButtonColorPreset, getFontColor } from '../../util';
+import { getColorPreset } from '../../util';
 import { GRAY, OVERLAY, ColorPreset } from '../../../colors';
 
 type Color = 'gray' | 'blue' | 'green' | 'yellow';
@@ -12,26 +12,27 @@ type FabProps = {
   disabled?: boolean;
   /** クリック時に実行する関数 */
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  /** カスタムスタイル */
+  style?: React.CSSProperties;
   /** ボタンのテキスト */
   children?: string;
 };
 
 function Fab({ color = 'green', disabled, onClick, children, ...props }: FabProps) {
-  const colors = getButtonColorPreset(color);
-  const fontColor = getFontColor(color);
+  const colors = getColorPreset(color);
   return (
-    <Button colors={colors} fontColor={fontColor} onClick={onClick} disabled={disabled} {...props}>
+    <Button colors={colors} onClick={onClick} disabled={disabled} {...props}>
       {children}
     </Button>
   );
 }
 
-const Button = styled.button<{ colors: ColorPreset; fontColor: string; disabled?: boolean }>`
+const Button = styled.button<{ colors: ColorPreset; disabled?: boolean }>`
   height: 40px;
   font-family: Hiragino Sans;
   font-size: 1rem;
   background-color: ${({ colors }) => colors.default};
-  color: ${({ fontColor }) => fontColor};
+  color: ${({ colors }) => colors.font};
   border: none;
   border-radius: 20px;
   cursor: pointer;

@@ -1,8 +1,8 @@
-import { GRAY, BLUE, GREEN, YELLOW, WHITE, NAVY, Color, ColorPreset } from '../../colors';
+import { GRAY, BLUE, GREEN, YELLOW, WHITE, Color, ColorPreset } from '../../colors';
 
 type Variant = 'contained' | 'outlined' | 'text';
 
-export const getButtonColorPreset = (color: Color) => {
+export const getColorPreset = (color: Color) => {
   switch (color) {
     case 'gray':
       return GRAY;
@@ -26,13 +26,8 @@ export const getSvgColor = (
 
   if (fill) return fill;
 
-  if (color) return getButtonColorPreset(color).default;
+  if (color) return getColorPreset(color).default;
 
-  return WHITE;
-};
-
-export const getFontColor = (color: Color) => {
-  if (color === 'gray' || color === 'yellow') return NAVY.dark;
   return WHITE;
 };
 
