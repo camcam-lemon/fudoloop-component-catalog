@@ -9,11 +9,20 @@ export default {
   component: Button,
 };
 
+const styles: React.CSSProperties = {
+  width: '216px',
+  height: '40px',
+};
+
 export const デフォルト = () => (
   <>
-    <Button onClick={action('clicked')}>メッセージを送信する</Button>
+    <Button onClick={action('clicked')} style={styles}>
+      メッセージを送信する
+    </Button>
     <Margin />
-    <Button disabled>メッセージを送信する</Button>
+    <Button disabled style={styles}>
+      メッセージを送信する
+    </Button>
   </>
 );
 
