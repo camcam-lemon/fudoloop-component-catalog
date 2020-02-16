@@ -9,6 +9,12 @@ export const calcIconSize = (size?: string | number) => {
   return `${Math.round(num * 0.7)}px`;
 };
 
+export const calcSize = (size?: string | number, coefficient = 1) => {
+  if (!size) return undefined;
+  const num = typeof size === 'string' ? Number(size.replace(/[^0-9]/g, '')) : size;
+  return `${Math.round(num * coefficient)}px`;
+};
+
 export const createViewBox = (prop?: string | number) => {
   if (!prop) return '0 0 0 0';
   if (typeof prop === 'number') return `0 0 ${prop} ${prop}`;
