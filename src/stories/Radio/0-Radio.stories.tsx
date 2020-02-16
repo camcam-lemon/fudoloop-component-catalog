@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useCallback, useMemo } from '@storybook/addons';
-import { NAVY, Color } from '../../colors';
-import { Column, Margin, Vertical } from '../Container';
+import { Color } from '../../colors';
+import { Column, Margin } from '../Container';
 
 import Radio from '../../components/Radio/Base';
 

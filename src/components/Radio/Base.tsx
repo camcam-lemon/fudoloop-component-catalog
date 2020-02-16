@@ -13,19 +13,19 @@ export type RadioProps = {
   name?: NativeInputProps['name'];
   /** ラジオボタンのID */
   id?: NativeInputProps['id'];
-  /** 初期状態をチェッケ済にするかいなか */
+  /** ラジオボタンをチェック済みにするか否かの真偽値 */
   checked?: boolean;
-  /** チェックボックスの横に表示するテキスト */
+  /** ラジオボタンの横に表示するテキスト */
   label?: string;
-  /** チェックボックスのサイズ */
+  /** ラジオボタンのサイズ */
   size?: string | number;
   /** fudoloopのカラープリセット */
   color?: Color;
-  /** チェックボックスとテキストのスペース */
+  /** ラジオボタンとテキストのスペース */
   space?: string | number;
   /** 使用可否 */
   disabled?: boolean;
-  /** チェックボックスに渡すその他のprops */
+  /** ラジオボタンに渡すその他のprops */
   inputProps?: StyledInputProps;
   /** カスタムスタイル */
   styles?: React.CSSProperties;
