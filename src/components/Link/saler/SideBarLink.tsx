@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getColorPreset } from '../util';
-import { GRAY, Color, ColorPreset, RED, WHITE } from '../../colors';
+import { getColorPreset } from '../../util';
+import { GRAY, Color, ColorPreset, RED, WHITE } from '../../../colors';
 
 type Props = {
   /** リンクエリアの色 */

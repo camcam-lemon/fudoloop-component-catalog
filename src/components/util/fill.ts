@@ -3,6 +3,12 @@ export const safetyNumberToString = (prop?: string | number) => {
   return typeof prop === 'number' ? `${prop}px` : prop;
 };
 
+export const calcIconSize = (size?: string | number) => {
+  if (!size) return undefined;
+  const num = typeof size === 'string' ? Number(size.replace(/[^0-9]/g, '')) : size;
+  return `${Math.round(num * 0.7)}px`;
+};
+
 export const createViewBox = (prop?: string | number) => {
   if (!prop) return '0 0 0 0';
   if (typeof prop === 'number') return `0 0 ${prop} ${prop}`;

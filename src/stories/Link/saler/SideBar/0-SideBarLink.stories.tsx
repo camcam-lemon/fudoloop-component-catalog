@@ -1,10 +1,10 @@
 import React from 'react';
-import { NAVY } from '../../../colors';
+import { NAVY } from '../../../../colors';
 
-import Link from '../../../components/Link/SideBarLink';
+import Link from '../../../../components/Link/saler/SideBarLink';
 
 export default {
-  title: 'Link/サイドバー',
+  title: 'Link/saler/サイドバー',
   component: Link,
 };
 
