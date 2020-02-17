@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import ForwardIcon from '../../Icons/Forward';
+import ForwardRightIcon from '../../Icons/ForwardRight';
 import { WHITE, NAVY, GRAY, GREEN } from '../../../colors';
 
 export type ProduceLinkProps = {
@@ -51,7 +51,7 @@ function ProduceLink({
       </Container>
       <Container>
         {navMessage && <NavMessage>{navMessage}</NavMessage>}
-        <ForwardIcon disabled={disabled} />
+        <ForwardRightIcon disabled={disabled} />
       </Container>
     </Anchor>
   );

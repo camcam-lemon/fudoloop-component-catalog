@@ -19,20 +19,25 @@ export type IconProps = {
   styles?: React.CSSProperties;
 };
 
-function Forward({ color, disabled = false, fill = NAVY.default, size, styles }: IconProps) {
+function ForwardBottom({ color, disabled = false, fill = NAVY.default, size, styles }: IconProps) {
   const fillColor = getSvgColor(disabled, fill, color);
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size || '8px'}
-      height={size || '13px'}
-      viewBox="0 0 8 13"
+      width={size || '14'}
+      height={size || '8px'}
+      viewBox="0 0 14 8"
       style={styles}
     >
-      <path fill={fillColor} fillRule="evenodd" d="M0 1.5L1.5 0 8 6.5 1.5 13 0 11.5l5-5z" />
+      <path
+        fill={fillColor}
+        fillRule="evenodd"
+        d="M306 34.035L307.5 32.535 314 39.035 307.5 45.535 306 44.035 311 39.035z"
+        transform="rotate(90 176 -129.965)"
+      />
     </svg>
   );
 }
 
-export default Forward;
+export default ForwardBottom;
