@@ -2,10 +2,10 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Margin } from '../../Container';
 
-import Button from '../../../components/Button/saler-admin/Base';
+import Button from '../../../components/Button/saler/Base';
 
 export default {
-  title: 'Button/saler-admin/Base',
+  title: 'Button/saler/Base',
   component: Button,
 };
 
@@ -19,6 +19,7 @@ export const デフォルト = () => (
 
 export const カスタムカラー = () => (
   <>
+    <Margin />
     <Button color="green" onClick={action('clicked')}>
       Green Button
     </Button>

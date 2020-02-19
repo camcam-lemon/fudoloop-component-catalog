@@ -8,4 +8,8 @@ export default {
   component: Header,
 };
 
-export const デフォルト = () => <Header />;
+export const デフォルト = () => (
+  <div style={{ width: '500px' }}>
+    <Header />
+  </div>
+);
