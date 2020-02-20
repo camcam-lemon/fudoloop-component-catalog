@@ -10,6 +10,6 @@ export default {
 
 export const デフォルト = () => (
   <div style={{ width: '500px' }}>
-    <Header />
+    <Header>確認</Header>
   </div>
 );

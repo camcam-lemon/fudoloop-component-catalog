@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import GoodJobIcon from '../../Icons/GoodJob';
 import { Color, ColorPreset, GRAY } from '../../../colors';
 import Fonts from '../../../fonts';
-import { Event } from '../../../@types/EventEmitter';
+import { Event } from '../../../@types/EventEmitter.d';
 import { getColorPreset } from '../../util';
 
 export type RagerButtonProps = {

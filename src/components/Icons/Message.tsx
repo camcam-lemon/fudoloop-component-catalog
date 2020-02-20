@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { getSvgColor } from '../util';
 import { Color, WHITE } from '../../colors';
@@ -27,7 +28,7 @@ function Cross({
   color,
   disabled = false,
   fill = WHITE,
-  size = '13px',
+  size = '24px',
   styles,
   className,
 }: IconProps) {
@@ -38,14 +39,16 @@ function Cross({
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      viewBox="0 0 13 13"
+      viewBox="0 0 24 24"
+      fill="none"
       style={styles}
       className={className}
     >
       <path
         fill={fillColor}
         fillRule="evenodd"
-        d="M6.5 8l-5 5L0 11.5l5-5-5-5L1.5 0l5 5 5-5L13 1.5l-5 5 5 5-1.5 1.5-5-5z"
+        clipRule="evenodd"
+        d="M3.8 2H18.2C19.19 2 20 2.81 20 3.8V14.6C20 15.59 19.19 16.4 18.2 16.4H5.6L2 20L2.009 3.8C2.009 2.81 2.81 2 3.8 2ZM5.6 12.8H16.4V11H5.6V12.8ZM16.4 10.1H5.6V8.3H16.4V10.1ZM5.6 7.4H16.4V5.6H5.6V7.4Z"
       />
     </svg>
   );
