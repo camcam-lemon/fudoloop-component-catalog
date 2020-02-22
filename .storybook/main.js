@@ -1,6 +1,15 @@
+const babelrc = require('./babel.config.js');
+
 module.exports = {
   stories: ['../src/**/stories/**/*.stories.tsx'],
   webpackFinal: async config => {
+    // styled-componentsでsvgをラップするとbabelの設定がバッティングして
+    // エラーを引き起こすのを回避するために設定を上書きしている
+    config.module.rules[0].use[0].options = {
+      babelrc: false,
+      cacheDirectory: true,
+      ...babelrc,
+    };
     config.module.rules.push(
       {
         test: /\.(ts|tsx)$/,
