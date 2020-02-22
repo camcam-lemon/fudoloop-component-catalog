@@ -19,7 +19,6 @@ export const デフォルト = () => (
 
 export const カスタムカラー = () => (
   <>
-    <Margin />
     <Button color="green" onClick={action('clicked')} />
     <Margin />
     <Button color="blue" onClick={action('clicked')} />

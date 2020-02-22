@@ -1,33 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NAVY, WHITE, Color } from '../../../colors';
+import { NAVY, WHITE } from '../../../colors';
 import Fonts from '../../../fonts';
-// import IconButton from '../../Button/shared/IconButton';
 import { Event } from '../../../@types/EventEmitter.d';
 import ForwardLeftIcon from '../../Icons/ForwardLeft';
 import CrossIcon from '../../Icons/Cross';
-import { getColorPreset } from '../../util';
 
 export type Icon = 'close' | 'back';
 
 export type HeaderProps = {
-  color?: Color;
-  icon: Icon;
-
-  onClick: (e: Event['click']) => void;
+  icon?: Icon;
+  onClick?: (e: Event['click']) => void;
   children?: React.ReactNode;
 };
 
-const styles: React.CSSProperties = {
-  margin: 0,
-  padding: 0,
-  background: 'unset',
-  border: 'none',
-  position: 'absolute',
-  left: '10px',
-};
-
-const getIcon = (icon: HeaderProps['icon'], onClick: HeaderProps['onClick']) => {
+const getIcon = (icon: HeaderProps['icon']) => {
   switch (icon) {
     case 'back': {
       return <ForwardLeftIcon fill={WHITE} />;
@@ -45,11 +32,9 @@ function Header({ icon = 'back', onClick, children }: HeaderProps) {
   return (
     <Container>
       <Wrapper>
-        <button style={styles}>{getIcon(icon, onClick)}</button>
+        <Button onClick={onClick}>{getIcon(icon)}</Button>
         <Title>{children}</Title>
       </Wrapper>
-
-      <>{/* <CrossIcon /> */}</>
     </Container>
   );
 }
@@ -74,8 +59,23 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 const Button = styled.button`
+  display: inline-flex;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 10px;
+  background: unset;
+  border: none;
   width: 24px;
   height: 24px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  :focus {
+    outline: none;
+  }
 `;
 const Title = styled.div`
   letter-spacing: -0.4px;
