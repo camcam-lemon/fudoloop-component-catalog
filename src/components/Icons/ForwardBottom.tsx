@@ -17,9 +17,18 @@ export type IconProps = {
   size?: string | number;
   /** svgに指定するスタイル */
   styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
 };
 
-function ForwardBottom({ color, disabled = false, fill = NAVY.default, size, styles }: IconProps) {
+function ForwardBottom({
+  color,
+  disabled = false,
+  fill = NAVY.default,
+  size,
+  styles,
+  className,
+}: IconProps) {
   const fillColor = getSvgColor(disabled, fill, color);
 
   return (
@@ -29,6 +38,7 @@ function ForwardBottom({ color, disabled = false, fill = NAVY.default, size, sty
       height={size || '8px'}
       viewBox="0 0 14 8"
       style={styles}
+      className={className}
     >
       <path
         fill={fillColor}

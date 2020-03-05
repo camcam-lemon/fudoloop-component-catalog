@@ -18,9 +18,11 @@ export type IconProps = {
   size?: string | number;
   /** svgに指定するスタイル */
   styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
 };
 
-function Vegitable({ color, disabled = false, fill, size = '30px', styles }: IconProps) {
+function Vegitable({ color, disabled = false, fill, size = '30px', styles, className }: IconProps) {
   const fillColor = getSvgColor(disabled, fill, color);
 
   return (
@@ -32,6 +34,7 @@ function Vegitable({ color, disabled = false, fill, size = '30px', styles }: Ico
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       style={styles}
+      className={className}
     >
       <title>vegetable</title>
       <desc>Created with Sketch.</desc>

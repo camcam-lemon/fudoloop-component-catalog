@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { NAVY, WHITE } from '../../../colors';
 import Fonts from '../../../fonts';
-import { Event } from '../../../@types/EventEmitter.d';
 import ForwardLeftIcon from '../../Icons/ForwardLeft';
 import CrossIcon from '../../Icons/Cross';
+import { Event } from '../../../@types/EventEmitter.d';
 
 export type Icon = 'close' | 'back';
 

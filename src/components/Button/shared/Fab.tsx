@@ -2,26 +2,44 @@ import React from 'react';
 import styled from 'styled-components';
 import { getColorPreset } from '../../util';
 import { GRAY, OVERLAY, ColorPreset } from '../../../colors';
+import { Event } from '../../../@types/EventEmitter.d';
 
 type Color = 'gray' | 'blue' | 'green' | 'yellow';
 
-type FabProps = {
+export type BaseFabProps = {
   /** ボタンの色 */
   color?: Color;
   /** 使用可否 */
   disabled?: boolean;
+  /** カスタムスタイル(css-in-js) */
+  styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
   /** クリック時に実行する関数 */
-  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  /** カスタムスタイル */
-  style?: React.CSSProperties;
+  onClick?: (e: Event['click']) => void;
   /** ボタンのテキスト */
   children?: string;
 };
 
-function Fab({ color = 'green', disabled, onClick, children, ...props }: FabProps) {
+function Fab({
+  styles,
+  className,
+  color = 'green',
+  disabled = false,
+  onClick,
+  children,
+  ...props
+}: BaseFabProps) {
   const colors = getColorPreset(color);
   return (
-    <Button colors={colors} onClick={onClick} disabled={disabled} {...props}>
+    <Button
+      colors={colors}
+      onClick={onClick}
+      disabled={disabled}
+      style={styles}
+      className={className}
+      {...props}
+    >
       {children}
     </Button>
   );

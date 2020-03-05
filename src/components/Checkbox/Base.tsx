@@ -3,6 +3,7 @@ import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { getSvgColor, safetyNumberToString, calcIconSize } from '../util';
 import { GRAY, Color } from '../../colors';
+import { Event } from '../../@types/EventEmitter.d';
 
 type NativeInputProps = JSX.IntrinsicElements['input'];
 type StyledInputProps = Omit<NativeInputProps, 'ref' | 'type'>;
@@ -20,10 +21,12 @@ export type CheckboxProps = {
   disabled?: boolean;
   /** チェックボックスに渡すその他のprops */
   inputProps?: StyledInputProps;
-  /** カスタムスタイル */
+  /** カスタムスタイル(css-in-js) */
   styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
   /** check時のイベント関数 */
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: Event['change']) => void;
   /** チェックボックスの横に表示するテキスト */
   children?: React.ReactNode;
 };
@@ -31,7 +34,7 @@ export type CheckboxProps = {
 function useChecbox({ checked: pChecked, onChange }: Pick<CheckboxProps, 'checked' | 'onChange'>) {
   const [checked, setChecked] = useState(!!pChecked);
   const onCheck = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
+    (e: Event['change']) => {
       setChecked(e.target.checked);
       if (onChange) onChange(e);
     },
@@ -52,6 +55,7 @@ function Base({
   space = '15px',
   inputProps,
   styles,
+  className,
   onChange,
   children,
 }: CheckboxProps) {
@@ -64,7 +68,7 @@ function Base({
     <Label disabled={disabled}>
       <CheckboxContainer size={size}>
         <Skelton checked={value} onChange={onCheck} disabled={disabled} {...inputProps} />
-        <Checkbox checked={value} disabled={disabled} style={styles}>
+        <Checkbox checked={value} disabled={disabled} style={styles} className={className}>
           <Icon viewBox="0 0 17 13" size={iconSize}>
             <path
               fill={fillColor}

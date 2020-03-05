@@ -15,8 +15,10 @@ export type RagerButtonProps = {
    * disabledと併用した場合、そちらが優先される
    */
   once?: boolean;
-  /** カスタムスタイル */
+  /** カスタムスタイル(css-in-js) */
   styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
   /** クリック時に実行する関数 */
   onClick?: (e: Event['click']) => void;
 };

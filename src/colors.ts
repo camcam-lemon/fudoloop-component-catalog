@@ -10,6 +10,7 @@ export type Color = 'green' | 'blue' | 'yellow' | 'gray';
 export const WHITE = '#FFFFFF';
 export const NAVY = {
   default: '#34495e',
+  hover: '#5C6D7E',
   dark: '#2c3e50',
 };
 
@@ -45,6 +46,7 @@ export const YELLOW = {
 
 // オーバーレイカラー
 export const OVERLAY = {
+  '10%': 'rgba(52, 71, 94, 0.1)',
   '30%': 'rgba(52, 71, 94, 0.3)',
-  '50%': 'rgba(0,0,0, 0.5)',
+  '50%': 'rgba(52, 71, 94, 0.5)',
 };

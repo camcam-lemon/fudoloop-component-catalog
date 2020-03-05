@@ -17,9 +17,18 @@ export type IconProps = {
   size?: string | number;
   /** svgに指定するスタイル */
   styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
 };
 
-function ForwardRight({ color, disabled = false, fill = NAVY.default, size, styles }: IconProps) {
+function ForwardRight({
+  color,
+  disabled = false,
+  fill = NAVY.default,
+  size,
+  styles,
+  className,
+}: IconProps) {
   const fillColor = getSvgColor(disabled, fill, color);
 
   return (
@@ -29,6 +38,7 @@ function ForwardRight({ color, disabled = false, fill = NAVY.default, size, styl
       height={size || '13px'}
       viewBox="0 0 8 13"
       style={styles}
+      className={className}
     >
       <path fill={fillColor} fillRule="evenodd" d="M0 1.5L1.5 0 8 6.5 1.5 13 0 11.5l5-5z" />
     </svg>

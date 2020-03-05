@@ -11,11 +11,9 @@ export type MessageFABProps = {
   color?: Color;
   /** 使用可否 */
   disabled?: boolean;
-  /** カスタムスタイル */
+  /** カスタムスタイル(css-in-js) */
   styles?: React.CSSProperties;
-  /** svgに指定するスタイル(cssModules)
-   * styled関数の継承にも対応している
-   */
+  /** カスタムスタイル(cssModules & styled-component) */
   className?: string;
   /** クリック時に実行する関数 */
   onClick?: (e: Event['click']) => void;

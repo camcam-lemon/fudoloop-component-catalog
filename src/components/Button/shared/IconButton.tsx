@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { GRAY, Color, OVERLAY, ColorPreset } from '../../../colors';
 import { getColorPreset, variantBgColor, incompleteNode } from '../../util';
+import { Event } from '../../../@types/EventEmitter.d';
 
 export type Variant = 'contained' | 'outlined' | 'text';
 
@@ -20,8 +21,12 @@ export type IconButtonProps = {
    * contained : 背景とシャドウ有りのボタン
    */
   variant?: Variant;
+  /** カスタムスタイル(css-in-js) */
+  styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
   /** クリック時に実行する関数 */
-  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (e: Event['click']) => void;
   /** ボタンに表示する要素 */
   children?: React.ReactNode;
 };
@@ -47,6 +52,8 @@ const forceEditSvgFillColor = (fontColor?: string, children?: React.ReactNode) =
 };
 
 function IconButton({
+  styles,
+  className,
   color = 'gray',
   fontColor: pFC,
   disabled = false,
@@ -63,6 +70,8 @@ function IconButton({
       fontColor={fontColor}
       variant={variant}
       disabled={disabled}
+      style={styles}
+      className={className}
       onClick={onClick}
     >
       <Flex>{forceEditSvgFillColor(fontColor, children)}</Flex>

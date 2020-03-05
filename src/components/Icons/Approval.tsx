@@ -18,6 +18,8 @@ export type IconProps = {
   size?: string | number;
   /** svgに指定するスタイル */
   styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
 };
 
 function Approval({
@@ -26,6 +28,7 @@ function Approval({
   fill = BLUE.default,
   size = '30px',
   styles,
+  className,
 }: IconProps) {
   const fillColor = getSvgColor(disabled, fill, color);
 
@@ -38,6 +41,7 @@ function Approval({
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       style={styles}
+      className={className}
     >
       <title>Apprval</title>
       <desc>Created with Sketch.</desc>

@@ -2,16 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import { getColorPreset } from '../../util/getColorPreset';
 import { GRAY, ColorPreset } from '../../../colors';
+import { Event } from '../../../@types/EventEmitter.d';
 
 type Color = 'gray' | 'blue' | 'green' | 'yellow';
 
-type ButtonProps = {
+export type ButtonProps = {
   /** ボタンの色 */
   color?: Color;
   /** 使用可否 */
   disabled?: boolean;
+  /** カスタムスタイル(css-in-js) */
+  styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
   /** クリック時に実行する関数 */
-  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (e: Event['click']) => void;
   /** ボタンのテキスト */
   children?: string;
   /** その他のボタンprops */
@@ -23,11 +28,20 @@ function SalerAdminBaseButton({
   disabled,
   onClick,
   children,
+  styles,
+  className,
   ...props
 }: ButtonProps) {
   const colors = getColorPreset(color);
   return (
-    <Button colors={colors} onClick={onClick} disabled={disabled} {...props}>
+    <Button
+      colors={colors}
+      onClick={onClick}
+      disabled={disabled}
+      style={styles}
+      className={className}
+      {...props}
+    >
       {children}
     </Button>
   );

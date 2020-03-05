@@ -18,9 +18,18 @@ export type IconProps = {
   size?: string | number;
   /** svgに指定するスタイル */
   styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
 };
 
-function Checked({ color, disabled = false, fill = GREEN.default, size, styles }: IconProps) {
+function Checked({
+  color,
+  disabled = false,
+  fill = GREEN.default,
+  size,
+  styles,
+  className,
+}: IconProps) {
   const fillColor = getSvgColor(disabled, fill, color);
 
   return (
@@ -30,6 +39,7 @@ function Checked({ color, disabled = false, fill = GREEN.default, size, styles }
       height={size || '13px'}
       viewBox="0 0 17 13"
       style={styles}
+      className={className}
     >
       <path
         fill={fillColor}

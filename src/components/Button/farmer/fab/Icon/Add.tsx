@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { safetyNumberToString } from '../../../../util';
 import { YELLOW, OVERLAY, GRAY, NAVY } from '../../../../../colors';
+import { Event } from '../../../../../@types/EventEmitter.d';
 
 export type FabAddProps = {
   /** 使用可否 */
@@ -20,13 +21,24 @@ export type FabAddProps = {
    * number型を指定した場合はpx値に変換されます */
   bottom?: number | string;
   /** クリック時に実行する関数 */
-
-  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  /** ボタンのテキスト */
+  onClick?: (e: Event['click']) => void;
+  /** カスタムスタイル(css-in-js) */
+  styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
   //   buttonProps?: JSX.IntrinsicElements['button'];
 };
 
-function Add({ disabled, right = 20, left, bottom = 10, onClick, ...props }: FabAddProps) {
+function Add({
+  disabled = false,
+  right = 20,
+  left,
+  bottom = 10,
+  onClick,
+  styles,
+  className,
+  ...props
+}: FabAddProps) {
   return (
     <Button
       onClick={onClick}
@@ -34,6 +46,8 @@ function Add({ disabled, right = 20, left, bottom = 10, onClick, ...props }: Fab
       left={left}
       bottom={bottom}
       disabled={disabled}
+      style={styles}
+      className={className}
       {...props}
     >
       <Vertical disabled={disabled} />

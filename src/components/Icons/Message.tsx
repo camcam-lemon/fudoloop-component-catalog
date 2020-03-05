@@ -18,9 +18,7 @@ export type IconProps = {
   size?: string | number;
   /** svgに指定するスタイル */
   styles?: React.CSSProperties;
-  /** svgに指定するスタイル(cssModules)
-   * styled関数の継承にも対応している
-   */
+  /** カスタムスタイル(cssModules & styled-component) */
   className?: string;
 };
 

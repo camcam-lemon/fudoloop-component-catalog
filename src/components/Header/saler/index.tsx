@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import IconButton from '../../Button/shared/IconButton';
 import { NAVY, GRAY } from '../../../colors';
 import Fonts from '../../../fonts';
-import { Event } from '../../../@types/EventEmitter.d';
 import VegitableIcon from '../../Icons/Vegitable';
 import InformationIcon from '../../Icons/Information';
 import SettingIcon from '../../Icons/Setting';
 import LogoutIcon from '../../Icons/Logout';
 import FudoloopLogo from '../../Icons/Logo';
+import { Event } from '../../../@types/EventEmitter.d';
 
 export type HeaderProps = {
   admin?: boolean;

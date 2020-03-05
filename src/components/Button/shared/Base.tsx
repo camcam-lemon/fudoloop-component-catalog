@@ -2,24 +2,41 @@ import React from 'react';
 import styled from 'styled-components';
 import { getColorPreset } from '../../util/getColorPreset';
 import { GRAY, NAVY, ColorPreset } from '../../../colors';
+import { Event } from '../../../@types/EventEmitter.d';
 
-type ButtonProps = {
+export type BaseButtonProps = {
   /** 使用可否 */
   disabled?: boolean;
-  /** スタイリング */
-  style?: React.CSSProperties;
+  /** カスタムスタイル(css-in-js) */
+  styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
   /** クリック時に実行する関数 */
-  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (e: Event['click']) => void;
   /** ボタンのテキスト */
   children?: string;
   /** その他のボタンpross */
 };
 
-function BaseButton({ disabled, onClick, children, ...props }: ButtonProps) {
+function BaseButton({
+  styles,
+  className,
+  disabled = false,
+  onClick,
+  children,
+  ...props
+}: BaseButtonProps) {
   const colors = getColorPreset('gray');
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
-    <Button colors={colors} onClick={onClick} disabled={disabled} {...props}>
+    <Button
+      colors={colors}
+      onClick={onClick}
+      disabled={disabled}
+      style={styles}
+      className={className}
+      {...props}
+    >
       {children}
     </Button>
   );

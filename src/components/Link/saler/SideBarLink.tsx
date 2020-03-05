@@ -14,6 +14,10 @@ type Props = {
   disabled?: boolean;
   /** 新着報告件数 */
   quantity?: number;
+  /** カスタムスタイル(css-in-js) */
+  styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
   /** リンクのテキスト */
   children?: React.ReactNode;
 };
@@ -32,6 +36,8 @@ function SideBarLink({
   active = false,
   disabled = false,
   quantity,
+  styles,
+  className,
   children,
 }: Props) {
   const colors = getColorPreset(color);
@@ -43,6 +49,8 @@ function SideBarLink({
         colors={colors}
         active={active}
         disabled={disabled}
+        style={styles}
+        className={className}
       >
         {children}
       </Anchor>

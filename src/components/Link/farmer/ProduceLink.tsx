@@ -16,8 +16,10 @@ export type ProduceLinkProps = {
   readed?: boolean;
   /** 卸からメッセージがきてるか否か */
   message?: boolean;
-  /** カスタムスタイル */
+  /** カスタムスタイル(css-in-js) */
   styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
   /** リンクのテキスト */
   children?: React.ReactNode;
 };
@@ -36,12 +38,19 @@ function ProduceLink({
   readed = false,
   message = false,
   styles,
+  className,
   children,
 }: ProduceLinkProps) {
   const navMessage = getNavMessage(reported, message);
 
   return (
-    <Anchor href={disabled ? undefined : href} disabled={disabled} margin={margin} style={styles}>
+    <Anchor
+      href={disabled ? undefined : href}
+      disabled={disabled}
+      margin={margin}
+      style={styles}
+      className={className}
+    >
       <Container reported={reported}>
         {reported && <Reported>済</Reported>}
         <div>

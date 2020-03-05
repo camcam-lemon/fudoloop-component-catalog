@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { getColorPreset, safetyNumberToString, calcSize } from '../util';
 import { GRAY, Color } from '../../colors';
+import { Event } from '../../@types/EventEmitter.d';
 
 type NativeInputProps = JSX.IntrinsicElements['input'];
 type StyledInputProps = Omit<NativeInputProps, 'ref' | 'type'>;
@@ -27,10 +28,12 @@ export type RadioProps = {
   disabled?: boolean;
   /** ラジオボタンに渡すその他のprops */
   inputProps?: StyledInputProps;
-  /** カスタムスタイル */
+  /** カスタムスタイル(css-in-js) */
   styles?: React.CSSProperties;
+  /** カスタムスタイル(cssModules & styled-component) */
+  className?: string;
   /** check時のイベント関数 */
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: Event['change']) => void;
 };
 
 const borderColor = ({
@@ -80,6 +83,7 @@ function Base({
   disabled = false,
   inputProps,
   styles,
+  className,
   onChange,
 }: RadioProps) {
   const { checked: sChecked, onCheck } = useRadio({ checked, onChange });
@@ -100,7 +104,13 @@ function Base({
           disabled={disabled}
           {...inputProps}
         />
-        <Radio checked={sChecked} disabled={disabled} color={colors.default} style={styles}>
+        <Radio
+          checked={sChecked}
+          disabled={disabled}
+          color={colors.default}
+          style={styles}
+          className={className}
+        >
           <Icon color={colors.default} size={iconSize} />
         </Radio>
       </RadioContainer>
