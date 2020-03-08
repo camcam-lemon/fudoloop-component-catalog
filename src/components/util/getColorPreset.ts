@@ -1,6 +1,22 @@
-import { GRAY, BLUE, GREEN, YELLOW, WHITE, Color, ColorPreset } from '../../colors';
+import {
+  GRAY,
+  BLUE,
+  GREEN,
+  YELLOW,
+  WHITE,
+  Color,
+  ColorPreset,
+  GRAY_ALPHA,
+  GREEN_ALPHA,
+  BLUE_ALPHA,
+  YELLOW_ALPHA,
+} from '../../colors';
 
 type Variant = 'contained' | 'outlined' | 'text';
+// type ColorManager = {
+//   disabled: boolean;
+
+// }
 
 export const getColorPreset = (color: Color) => {
   switch (color) {
@@ -14,6 +30,21 @@ export const getColorPreset = (color: Color) => {
       return YELLOW;
     default:
       return GRAY;
+  }
+};
+
+export const getAlphaColorPreset = (color: Color) => {
+  switch (color) {
+    case 'gray':
+      return GRAY_ALPHA;
+    case 'green':
+      return GREEN_ALPHA;
+    case 'blue':
+      return BLUE_ALPHA;
+    case 'yellow':
+      return YELLOW_ALPHA;
+    default:
+      return GRAY_ALPHA;
   }
 };
 
@@ -48,3 +79,9 @@ export const variantBgColor = ({
   }
   return disabled ? GRAY.default : colors[type];
 };
+
+// export const colorManager = ({
+//   default: defaultColor,
+//   checked: checkedColor,
+//   disabled: disabledColor,
+// }: )

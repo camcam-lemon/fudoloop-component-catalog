@@ -4,6 +4,11 @@ export type ColorPreset = {
   press: string;
   font: string;
 };
+export type AlphaColorPreset = {
+  '10%': string;
+  '30%': string;
+  '50%': string;
+};
 export type Color = 'green' | 'blue' | 'yellow' | 'gray';
 
 // パーソナルカラー
@@ -18,7 +23,6 @@ export const RED = {
   default: '#ff4242',
 };
 
-// ボタンカラー
 export const GRAY = {
   default: '#ecf0f1',
   hover: '#bdc3c7',
@@ -42,6 +46,33 @@ export const YELLOW = {
   hover: '#f6a411',
   press: '#e09102',
   font: NAVY.dark,
+};
+
+// パーソナルアルファカラー
+export const GRAY_ALPHA = {
+  '10%': 'rgba(189, 195, 199, 0.1)',
+  '30%': 'rgba(189, 195, 199, 0.3)',
+  '50%': 'rgba(189, 195, 199, 0.5)',
+};
+export const GREEN_ALPHA = {
+  '10%': 'rgba(25, 150, 3, 0.1)',
+  '30%': 'rgba(25, 150, 3, 0.3)',
+  '50%': 'rgba(25, 150, 3, 0.5)',
+};
+export const BLUE_ALPHA = {
+  '10%': 'rgba(78, 166, 198, 0.1)',
+  '30%': 'rgba(78, 166, 198, 0.3)',
+  '50%': 'rgba(78, 166, 198, 0.5)',
+};
+export const YELLOW_ALPHA = {
+  '10%': 'rgba(246, 164, 17, 0.1)',
+  '30%': 'rgba(246, 164, 17, 0.3)',
+  '50%': 'rgba(246, 164, 17, 0.5)',
+};
+export const RED_ALPHA = {
+  '10%': 'rgba(255, 66, 66, 0.1)',
+  '30%': 'rgba(255, 66, 66, 0.3)',
+  '50%': 'rgba(255, 66, 66, 0.5)',
 };
 
 // オーバーレイカラー
