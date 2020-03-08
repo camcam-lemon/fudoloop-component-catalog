@@ -16,11 +16,11 @@ const styles: React.CSSProperties = {
 
 export const デフォルト = () => (
   <>
-    <Button onClick={action('clicked')} style={styles}>
+    <Button onClick={action('clicked')} styles={styles}>
       メッセージを送信する
     </Button>
     <Margin />
-    <Button disabled style={styles}>
+    <Button disabled styles={styles}>
       メッセージを送信する
     </Button>
   </>

@@ -11,7 +11,7 @@ export default {
 export const デフォルト = () => (
   <>
     <SpotLight />
-    <Button style={{ marginTop: '20px', marginLeft: '7px' }}>ここだよ</Button>
+    <Button styles={{ marginTop: '20px', marginLeft: '7px' }}>ここだよ</Button>
   </>
 );
 

@@ -21,14 +21,7 @@ export type IconProps = {
   className?: string;
 };
 
-function Cross({
-  color,
-  disabled = false,
-  fill = WHITE,
-  size = '13px',
-  styles,
-  className,
-}: IconProps) {
+function Cross({ color, disabled = false, fill = WHITE, size, styles, className }: IconProps) {
   const fillColor = getSvgColor(disabled, fill, color);
 
   return (
@@ -36,15 +29,28 @@ function Cross({
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      viewBox="0 0 13 13"
+      viewBox="0 0 20 20"
+      fill="none"
       style={styles}
       className={className}
     >
-      <path
-        fill={fillColor}
-        fillRule="evenodd"
-        d="M6.5 8l-5 5L0 11.5l5-5-5-5L1.5 0l5 5 5-5L13 1.5l-5 5 5 5-1.5 1.5-5-5z"
-      />
+      <g id="OvalContainer">
+        <g id="CrossIcon">
+          <path
+            fill={fillColor}
+            id="Rectangle"
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M3 15.3042L15.2635 3L17 4.74339L4.81993 17L3 15.3042Z"
+          />
+          <path
+            fill={fillColor}
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M4.6958 3L17 15.2635L15.2566 17L3 4.81993L4.6958 3Z"
+          />
+        </g>
+      </g>
     </svg>
   );
 }

@@ -35,16 +35,24 @@ function Checked({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={size || '17px'}
-      height={size || '13px'}
-      viewBox="0 0 17 13"
+      width={size || '20px'}
+      height={size || '20px'}
+      viewBox="0 0 20 20"
+      fill="none"
       style={styles}
       className={className}
     >
       <path
         fill={fillColor}
         fillRule="evenodd"
-        d="M14.422.207a.683.683 0 0 0-.98 0L6.318 7.478a.683.683 0 0 1-.98 0L2.806 4.894a.682.682 0 0 0-.98 0L.204 6.552a.717.717 0 0 0 0 1l5.134 5.241c.271.276.71.276.98 0l9.73-9.93a.716.716 0 0 0 0-1L14.422.208z"
+        clipRule="evenodd"
+        d="M5.01123 14.2736L15.5278 3L17.017 4.59736L6.57192 15.8273L5.01123 14.2736Z"
+      />
+      <path
+        fill={fillColor}
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M3.725 9.49902L8.16998 14.1052L6.57189 15.8269L2 11.2762L3.725 9.49902Z"
       />
     </svg>
   );
