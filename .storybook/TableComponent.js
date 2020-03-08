@@ -85,7 +85,7 @@ const TableComponent = ({ propDefinitions, type }) => {
     <Table>
       <THead>
         <Tr>
-          <Th>prop名</Th>
+          <Th>props</Th>
           <Th>型</Th>
           <Th>デフォルト値</Th>
           <Th last>説明</Th>
