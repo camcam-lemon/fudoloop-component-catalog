@@ -11,7 +11,7 @@ import FudoloopLogo from '../../Icons/Logo';
 import { Event } from '../../../@types/EventEmitter.d';
 
 export type HeaderProps = {
-  admin?: boolean;
+  current?: 'report' | 'admin' | 'information' | 'setting';
   saler?: string;
   user?: string;
   onVegitable?: (e: Event['click']) => void;
@@ -21,7 +21,7 @@ export type HeaderProps = {
 };
 
 function Header({
-  admin,
+  current,
   saler,
   user,
   onVegitable,
@@ -29,7 +29,7 @@ function Header({
   onSetting,
   onLogout,
 }: HeaderProps) {
-  const color = admin ? 'blue' : 'green';
+  const color = current === 'report' ? 'green' : 'blue';
   return (
     <Container>
       <Wrapper>
@@ -43,15 +43,15 @@ function Header({
         </Information>
         <Grow />
         <Navigation>
-          <IconButton color={color} onClick={onVegitable}>
+          <IconButton disabled={current === 'report'} color={color} onClick={onVegitable}>
             <VegitableIcon />
             入荷予定量
           </IconButton>
-          <IconButton color={color} onClick={onInformation}>
+          <IconButton disabled={current === 'information'} color={color} onClick={onInformation}>
             <InformationIcon />
             利用状況
           </IconButton>
-          <IconButton color={color} onClick={onSetting}>
+          <IconButton disabled={current === 'setting'} color={color} onClick={onSetting}>
             <SettingIcon />
             設定
           </IconButton>
