@@ -93,7 +93,6 @@ const Input = styled.input<{ colors: ColorPreset }>`
   color: ${NAVY.default};
   margin: 0;
   padding: 0 8px;
-  border: none;
   border: 1px solid ${GRAY.default};
   outline: none;
   border-radius: 4px;
