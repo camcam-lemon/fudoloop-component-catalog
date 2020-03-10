@@ -13,6 +13,24 @@ export const ダッシュボードページ = () => (
     <div>ページ上部にヘッダーがあります</div>
     <div style={{ width: '500px' }}>
       <Header
+        current="report"
+        saler="六本木大同青果"
+        user="橋下勝"
+        onVegitable={action('clicked')}
+        onInformation={action('clicked')}
+        onSetting={action('clicked')}
+        onLogout={action('clicked')}
+      />
+    </div>
+  </>
+);
+
+export const 利用状況ページ = () => (
+  <>
+    <div>ページ上部にヘッダーがあります</div>
+    <div style={{ width: '500px' }}>
+      <Header
+        current="information"
         saler="六本木大同青果"
         user="橋下勝"
         onVegitable={action('clicked')}
@@ -29,7 +47,7 @@ export const アドミンページ = () => (
     <div>ページ上部にヘッダーがあります</div>
     <div style={{ width: '500px' }}>
       <Header
-        admin
+        current="setting"
         saler="六本木大同青果"
         user="橋下勝"
         onVegitable={action('clicked')}
