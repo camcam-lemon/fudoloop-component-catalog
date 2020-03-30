@@ -75,6 +75,7 @@ module.exports = {
     'import/no-extraneous-dependencies': OFF,
     'no-plusplus': OFF,
     'react/jsx-props-no-spreading': OFF,
+    'react/prop-types': OFF,
     '@typescript-eslint/no-explicit-any': OFF,
     '@typescript-eslint/explicit-member-accessibility': OFF,
     '@typescript-eslint/explicit-function-return-type': OFF,
