@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "start-storybook -p 6006",
+    "lint": "eslint 'src/**/*.ts?(x)'",
+    "lint:fix": "eslint 'src/**/*.ts?(x)' --fix",
     "build-storybook": "build-storybook",
     "predeploy": "build-storybook",
     "deploy": "gh-pages -d storybook-static"
