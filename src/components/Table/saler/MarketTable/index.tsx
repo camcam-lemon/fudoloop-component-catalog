@@ -15,12 +15,12 @@ export type MarketTableProps = {
 export interface Data {
   id: string;
   name: string;
-  standard: string | null;
-  totalAmount: number | null;
+  standard?: string;
+  totalAmount?: number;
   prices: {
-    row: number | null;
-    middle: number | null;
-    high: number | null;
+    row?: number;
+    middle?: number;
+    high?: number;
   };
   comment: string;
 }

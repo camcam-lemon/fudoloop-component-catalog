@@ -1,5 +1,5 @@
 /* eslint-disable import/no-cycle */
-import React, { useContext, useCallback } from 'react';
+import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { MarketTableContext } from '../Provider';
 import { EditIconCell } from './EditIconCell';
@@ -7,8 +7,8 @@ import { DoneIconCell } from './DoneIconCell';
 import TextField from '../../../../TextField/MarketField';
 import Fonts from '../../../../../fonts';
 import { NAVY, GRAY } from '../../../../../colors';
-import { MarketTableProps } from '..';
-import { Event } from '../../../../../@types/EventEmitter.d';
+// import { MarketTableProps } from '..';
+// import { Event } from '../../../../../@types/EventEmitter.d';
 
 export const TableBody: React.FC = () => {
   const {
@@ -44,7 +44,7 @@ export const TableBody: React.FC = () => {
                       label="入荷量"
                       id="total-amount"
                       value={totalAmount}
-                      placeholder={0}
+                      placeholder="0"
                     />
                   </div>
                 ) : (

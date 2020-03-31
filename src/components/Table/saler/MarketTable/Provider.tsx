@@ -10,12 +10,12 @@ type Props = {
 } & MarketTableProps;
 
 function useTable({ renderData, onClickEdit, onClickEditComplete }: MarketTableProps) {
-  const [dataList, setDataList] = useState<Data[]>(renderData);
+  const [dataList, setDataList] = useState<Data[]>(renderData || []);
   const [editable, setEditable] = useState(false);
   const [editIndex, setEditIndex] = useState(-1);
 
   useEffect(() => {
-    setDataList(renderData);
+    setDataList(renderData || []);
   }, [renderData]);
 
   const onEdit = useCallback(
