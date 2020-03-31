@@ -4,9 +4,12 @@ import styled from 'styled-components';
 import { TableHeader } from './TableHeader';
 import { TableBody } from './TableBody';
 import { Provider } from './Provider';
+import { Event } from '../../../../@types/EventEmitter.d';
 
 export type MarketTableProps = {
-  renderData: Data[];
+  renderData?: Data[];
+  onClickEdit?: (e: Event['click'], index: number) => void;
+  onClickEditComplete?: (e: Event['click'], index: number) => void;
 };
 
 export interface Data {
@@ -22,10 +25,10 @@ export interface Data {
   comment: string;
 }
 
-function MarketTable({ renderData }: MarketTableProps) {
+function MarketTable(props: MarketTableProps) {
   return (
-    <Provider renderData={renderData}>
-      <Table>
+    <Provider {...props}>
+      <Table cellPadding="0">
         <TableHeader />
         <TableBody />
       </Table>
@@ -38,7 +41,7 @@ const Table = styled.table`
   margin: 0;
   border: unset;
   outline: unset;
-  border-spacing: 1px;
+  border-spacing: 0;
   border-collapse: collapse;
   min-width: 660px;
 `;

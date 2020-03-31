@@ -36,6 +36,7 @@ const InputText = styled.input.attrs({ type: 'text' })<StyledTextProps>`
   padding: 0 4px;
   height: ${({ height }) => height || '20px'};
   border: unset;
+  background-color: transparent;
   box-sizing: border-box;
   outline: none;
   cursor: text;

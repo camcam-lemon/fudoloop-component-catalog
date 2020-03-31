@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import EditIcon from '../../../../Icons/Edit';
+import DoneIcon from '../../../../Icons/Done';
 import { OVERLAY } from '../../../../../colors';
 import { Event } from '../../../../../@types/EventEmitter.d';
 
@@ -9,12 +9,12 @@ type Props = {
   index: number;
 };
 
-export const EditIconCell: React.FC<Props> = React.memo(({ index, onClick }) => {
+export const DoneIconCell: React.FC<Props> = React.memo(({ index, onClick }) => {
   const onClickIcon = onClick(index);
 
   return (
     <IconButton onClick={onClickIcon}>
-      <EditIcon />
+      <DoneIcon />
     </IconButton>
   );
 });

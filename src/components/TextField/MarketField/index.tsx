@@ -137,6 +137,7 @@ const Container = styled.div`
 `;
 const Label = styled.label<StyledProps>`
   ${Fonts[300]}
+  text-align: left;
   color: ${({ color, focused }) => (focused ? color : GRAY.press)};
   font-size: 10px;
   letter-spacing: -0.4px;
