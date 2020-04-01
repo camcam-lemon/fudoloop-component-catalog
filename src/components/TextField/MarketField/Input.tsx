@@ -57,6 +57,7 @@ const TextArea = styled.textarea<StyledTextProps>`
   letter-spacing: -0.4px;
   width: inherit;
   color: ${NAVY.default};
+  background-color: transparent;
   text-align: ${({ align }) => align};
   padding: 0 4px;
   height: ${({ height }) => height || '20px'};

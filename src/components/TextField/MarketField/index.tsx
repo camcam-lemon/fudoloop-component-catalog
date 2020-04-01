@@ -5,9 +5,9 @@ import Fonts from '../../../fonts';
 // eslint-disable-next-line import/no-cycle
 import Input from './Input';
 import { getColorPreset } from '../../util';
-import { Event } from '../../../@types/EventEmitter.d';
 
 type NativeInputProps = JSX.IntrinsicElements['input'];
+type Event = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
 
 export type MarketFieldProps = {
   /** テキストフィールドに設定する値 */
@@ -37,17 +37,14 @@ export type MarketFieldProps = {
   /** カスタムスタイル(cssModules & styled-component) */
   className?: string;
   /** テキスト入力時のイベント関数 */
-  onChange?: (e: Event['change'] | Event['changeTextArea']) => void;
+  onChange?: (e: any) => void;
 };
 
-function useTextFiled(
-  pValue: MarketFieldProps['value'],
-  pChange: MarketFieldProps['onChange'],
-): [NativeInputProps['value'], (e: Event['change'] | Event['changeTextArea']) => void] {
+function useTextFiled(pValue: MarketFieldProps['value'], pChange: MarketFieldProps['onChange']) {
   const [value, setValue] = useState(pValue);
 
   const onChange = useCallback(
-    (e: Event['change'] | Event['changeTextArea']) => {
+    (e: Event) => {
       setValue(e.target.value);
       if (pChange) pChange(e);
     },
@@ -58,7 +55,7 @@ function useTextFiled(
     setValue(pValue);
   }, [pValue]);
 
-  return [value, onChange];
+  return { value, onChange };
 }
 
 function useFocus() {
@@ -89,7 +86,7 @@ function MarketField({
   className,
   onChange: pChange,
 }: MarketFieldProps) {
-  const [value, onChange] = useTextFiled(pValue, pChange);
+  const { value, onChange } = useTextFiled(pValue, pChange);
   const { focused, onFocus, onBlur } = useFocus();
   const colors = getColorPreset(color);
 
