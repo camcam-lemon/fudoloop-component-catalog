@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import DoneIcon from '../../../../Icons/Done';
-import { OVERLAY } from '../../../../../colors';
-import { Event } from '../../../../../@types/EventEmitter.d';
+import EditIcon from '../../../../../Icons/Edit';
+import { OVERLAY } from '../../../../../../colors';
+import { Event } from '../../../../../../@types/EventEmitter.d';
 
 type Props = {
   onClick: (index: number) => (e: Event['click']) => void;
   index: number;
 };
 
-export const DoneIconCell: React.FC<Props> = React.memo(({ index, onClick }) => {
+export const EditButton: React.FC<Props> = React.memo(({ index, onClick }) => {
   const onClickIcon = onClick(index);
 
   return (
     <IconButton onClick={onClickIcon}>
-      <DoneIcon />
+      <EditIcon />
     </IconButton>
   );
 });

@@ -1,21 +1,21 @@
 import React from 'react';
 
-import MarketTable from '../../../components/Table/saler/MarketTable';
+import MarketTable, { MarketTableProps } from '../../../components/Table/saler/MarketTable';
 
 export default {
   title: 'Table/MarketTable',
   component: MarketTable,
 };
 
-const MOCK_DATA = [
+const MOCK_DATA: MarketTableProps['renderData'] = [
   {
     id: '111123',
-    name: 'ロメインレタス',
+    name: 'ロメインレタスジュニアJr.',
     standard: 'AM',
     totalAmount: 2400,
     prices: {
       row: 60,
-      middle: null,
+      middle: undefined,
       high: 120,
     },
     comment: '高値で持ち合いそうです。',
@@ -27,7 +27,7 @@ const MOCK_DATA = [
     totalAmount: 123456789,
     prices: {
       row: 123456789,
-      middle: 123456789,
+      middle: undefined,
       high: 123456789,
     },
     comment: '節分が近くしばらく高値で売れそうです。ALよりもAMの方が高く売れそうです。',
@@ -35,12 +35,12 @@ const MOCK_DATA = [
   {
     id: '42440394',
     name: 'なす',
-    standard: null,
-    totalAmount: null,
+    standard: undefined,
+    totalAmount: undefined,
     prices: {
-      row: null,
-      middle: null,
-      high: null,
+      row: undefined,
+      middle: undefined,
+      high: undefined,
     },
     comment: '',
   },

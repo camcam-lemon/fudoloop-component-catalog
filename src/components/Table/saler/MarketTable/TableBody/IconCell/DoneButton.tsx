@@ -1,23 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import EditIcon from '../../../../Icons/Edit';
-import { OVERLAY } from '../../../../../colors';
-import { Event } from '../../../../../@types/EventEmitter.d';
+import DoneIcon from '../../../../../Icons/Done';
+import { OVERLAY } from '../../../../../../colors';
+import { Event } from '../../../../../../@types/EventEmitter.d';
 
 type Props = {
   onClick: (index: number) => (e: Event['click']) => void;
   index: number;
 };
 
-export const EditIconCell: React.FC<Props> = React.memo(({ index, onClick }) => {
-  const onClickIcon = onClick(index);
-
-  return (
-    <IconButton onClick={onClickIcon}>
-      <EditIcon />
-    </IconButton>
-  );
-});
+export const DoneButton: React.FC<Props> = React.memo(({ index, onClick }) => (
+  <IconButton onClick={onClick(index)}>
+    <DoneIcon />
+  </IconButton>
+));
 
 const IconButton = styled.button`
   right: 24px;
