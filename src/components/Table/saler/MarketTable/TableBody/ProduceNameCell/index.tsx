@@ -1,5 +1,6 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useContext } from 'react';
 import styled from 'styled-components';
+import { EditableTableFormContext, changeFormValue } from '../../factory/useEditableTable';
 import TextField from '../../../../../TextField/MarketField';
 import { ElipseText } from '../ElipseText';
 import { NAVY } from '../../../../../../colors';
@@ -14,15 +15,22 @@ type Props = {
 const BASE_MARGIN = 68;
 const BREAK_WORD = 10;
 
-function useTextField(initialValue: string) {
-  const [value, setValue] = useState(initialValue);
-  const onChange = useCallback((e: Event['change']) => {
-    e.stopPropagation();
-    setValue(e.target.value);
-  }, []);
+function useTextField() {
+  const {
+    forms: { standard },
+    changeForm,
+  } = useContext(EditableTableFormContext);
+  const onChange = useCallback(
+    (e: Event['change']) => {
+      e.stopPropagation();
+      changeForm(changeFormValue({ prop: 'standard', value: e.target.value }));
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
 
   return {
-    value,
+    value: standard,
     onChange,
   };
 }
@@ -37,8 +45,9 @@ function useCalcTextFieldMargin(name: string) {
 }
 
 export const ProduceNameCell: React.FC<Props> = React.memo(({ open, name, standard }) => {
-  const { value, onChange } = useTextField(standard || '');
+  const { value, onChange } = useTextField();
   const marginTop = useCalcTextFieldMargin(name);
+  console.log('render');
 
   if (open) {
     return (

@@ -1,6 +1,7 @@
 /* eslint-disable import/no-cycle */
 import React from 'react';
 import styled from 'styled-components';
+import { Data } from './factory/useTable';
 import { TableHeader } from './TableHeader';
 import { TableBody } from './TableBody';
 import { Provider } from './Provider';
@@ -10,31 +11,17 @@ export type MarketTableProps = {
   renderData?: Data[];
   onClickEdit?: (e: Event['click'], index: number) => void;
   onClickEditComplete?: (e: Event['click'], index: number) => void;
+  onCancel?: (e: Event['click'] | Event['clickDiv'], index: number) => void;
 };
 
-export interface Data {
-  id: string;
-  name: string;
-  standard?: string;
-  totalAmount?: number;
-  prices: {
-    row?: number;
-    middle?: number;
-    high?: number;
-  };
-  comment: string;
-}
-
-function MarketTable(props: MarketTableProps) {
-  return (
-    <Provider {...props}>
-      <Table cellPadding="0">
-        <TableHeader />
-        <TableBody />
-      </Table>
-    </Provider>
-  );
-}
+const MarketTable: React.FC<MarketTableProps> = props => (
+  <Provider {...props}>
+    <Table>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  </Provider>
+);
 
 const Table = styled.table`
   padding: 0;

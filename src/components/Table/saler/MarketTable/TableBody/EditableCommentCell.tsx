@@ -1,7 +1,9 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import styled from 'styled-components';
 import TextField from '../../../../TextField/MarketField';
 import Button from '../../../../Button/saler/Base';
+import { MarketTableContext } from '../factory/useTable';
+import { EditableTableFormContext, changeFormValue } from '../factory/useEditableTable';
 import { Event } from '../../../../../@types/EventEmitter.d';
 
 type Props = {
@@ -12,15 +14,22 @@ type Props = {
   placeholder: string;
 };
 
-function useTextField(initialValue?: string) {
-  const [value, setValue] = useState(initialValue || '');
-  const onChange = useCallback((e: Event['changeTextArea']) => {
-    e.stopPropagation();
-    setValue(e.target.value);
-  }, []);
+function useTextField() {
+  const {
+    forms: { comment },
+    changeForm,
+  } = useContext(EditableTableFormContext);
+  const onChange = useCallback(
+    (e: Event['change']) => {
+      e.stopPropagation();
+      changeForm(changeFormValue({ prop: 'comment', value: e.target.value }));
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
 
   return {
-    value,
+    value: comment,
     onChange,
   };
 }
@@ -32,7 +41,10 @@ export const EditableCommentCell: React.FC<Props> = ({
   id,
   placeholder,
 }) => {
-  const { value, onChange } = useTextField(String(pValue));
+  const {
+    action: { onClose, onComplete },
+  } = useContext(MarketTableContext);
+  const { value, onChange } = useTextField();
 
   if (open) {
     return (
@@ -49,9 +61,11 @@ export const EditableCommentCell: React.FC<Props> = ({
           onChange={onChange}
         />
         <ActionArea>
-          <ActionButton color="gray">キャンセル</ActionButton>
+          <ActionButton color="gray" onClick={onClose}>
+            キャンセル
+          </ActionButton>
           <Margin />
-          <ActionButton>市況を公開する</ActionButton>
+          <ActionButton onClick={onComplete}>市況を公開する</ActionButton>
         </ActionArea>
       </div>
     );

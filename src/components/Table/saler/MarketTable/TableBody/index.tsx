@@ -1,13 +1,15 @@
 /* eslint-disable import/no-cycle */
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { MarketTableContext } from '../Provider';
+import { MarketTableContext } from '../factory/useTable';
 import { EditableWrapper } from './EditableWrapper';
 import Fonts from '../../../../../fonts';
 import { NAVY, GRAY } from '../../../../../colors';
 
 export const TableBody: React.FC = () => {
-  const { dataList, editable, editIndex } = useContext(MarketTableContext);
+  const {
+    tableUIState: { editable, editIndex, dataList },
+  } = useContext(MarketTableContext);
 
   return (
     <TBody>

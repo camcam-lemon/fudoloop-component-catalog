@@ -6,4 +6,5 @@ export type Event = {
   drag: React.MouseEvent<HTMLDivElement, DragEvent>;
   click: React.MouseEvent<HTMLButtonElement, MouseEvent>;
   clickDiv: React.MouseEvent<HTMLDivElement, MouseEvent>;
+  clickTableRow: React.MouseEvent<HTMLTableRowElement, MouseEvent>;
 };
