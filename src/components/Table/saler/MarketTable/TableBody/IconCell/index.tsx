@@ -15,7 +15,6 @@ export const IconCell: React.FC<Props> = React.memo(({ open, index, disabled }) 
     action: { onEdit, onComplete },
   } = useContext(MarketTableContext);
 
-  console.log('done');
   return open ? (
     <DoneButton onClick={onComplete} />
   ) : (

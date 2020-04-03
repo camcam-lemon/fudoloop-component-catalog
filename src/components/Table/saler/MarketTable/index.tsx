@@ -2,15 +2,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Data } from './factory/useTable';
+import { EditableTableState } from './factory/useEditableTable';
 import { TableHeader } from './TableHeader';
 import { TableBody } from './TableBody';
 import { Provider } from './Provider';
 import { Event } from '../../../../@types/EventEmitter.d';
 
+export * from './factory/useTable';
+export type FormValues = EditableTableState;
+
 export type MarketTableProps = {
   renderData?: Data[];
   onClickEdit?: (e: Event['click'], index: number) => void;
-  onClickEditComplete?: (e: Event['click'], index: number) => void;
+  onClickEditComplete?: (e: Event['click'], index: number, forms: EditableTableState) => void;
   onCancel?: (e: Event['click'] | Event['clickDiv'], index: number) => void;
 };
 

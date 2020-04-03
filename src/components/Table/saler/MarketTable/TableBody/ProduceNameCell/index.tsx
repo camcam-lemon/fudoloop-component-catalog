@@ -47,7 +47,6 @@ function useCalcTextFieldMargin(name: string) {
 export const ProduceNameCell: React.FC<Props> = React.memo(({ open, name, standard }) => {
   const { value, onChange } = useTextField();
   const marginTop = useCalcTextFieldMargin(name);
-  console.log('render');
 
   if (open) {
     return (

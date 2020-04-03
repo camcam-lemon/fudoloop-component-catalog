@@ -21,11 +21,11 @@ import { Event } from '../../../../@types/EventEmitter.d';
 type Props = {
   renderData?: Data[];
   onClickEdit?: (e: Event['click'], index: number) => void;
-  onClickComplete?: (e: Event['click'], index: number, forms: EditableTableState) => void;
+  onClickEditComplete?: (e: Event['click'], index: number, forms: EditableTableState) => void;
   onCancel?: (e: Event['click'] | Event['clickDiv'], index: number) => void;
 };
 
-function useAction({ renderData, onClickEdit, onClickComplete, onCancel }: Props) {
+function useAction({ renderData, onClickEdit, onClickEditComplete, onCancel }: Props) {
   const {
     tableUIState: { dataList, editable, editIndex },
     dispatch,
@@ -53,7 +53,7 @@ function useAction({ renderData, onClickEdit, onClickComplete, onCancel }: Props
   );
 
   const onComplete = (e: Event['click']) => {
-    if (onClickComplete) onClickComplete(e, editIndex, forms);
+    if (onClickEditComplete) onClickEditComplete(e, editIndex, forms);
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     dispatch(updateDataList(forms));
     changeForm(initialize());
