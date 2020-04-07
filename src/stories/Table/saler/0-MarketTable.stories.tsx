@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useState, useCallback } from '@storybook/addons';
 import MarketTable, { MarketTableProps, Data } from '../../../components/Table/saler/MarketTable';
-import { Vertical, Column } from '../../Container';
+import { Column } from '../../Container';
 
 export default {
   title: 'Table/MarketTable',
@@ -94,7 +94,7 @@ export const 組み込み = () => {
     [dataList],
   );
 
-  const onCancel = useCallback<MarketTableProps['onCancel']>((e, index) => {
+  const onCancel = useCallback<MarketTableProps['onCancel']>(e => {
     e.stopPropagation();
     setEditable(prev => !prev);
     setEditIndex(-1);
