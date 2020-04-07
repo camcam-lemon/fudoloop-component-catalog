@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { addDecorator } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import TableComponent from './TableComponent';
