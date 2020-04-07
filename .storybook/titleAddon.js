@@ -1,4 +1,5 @@
 import addons from '@storybook/addons';
+import { create } from '@storybook/theming/create';
 import { STORY_RENDERED } from '@storybook/core-events';
 
 addons.register('TitleAddon', api => {
@@ -26,4 +27,12 @@ addons.register('TitleAddon', api => {
   api.on(STORY_RENDERED, story => {
     setTitle();
   });
+});
+addons.setConfig({
+  theme: create({
+    base: 'light',
+    brandTitle: 'Fudoloopコンポーネントカタログ',
+    fontBase: 'Hiragino Sans, "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif',
+    fontCode: 'monospace',
+  }),
 });
