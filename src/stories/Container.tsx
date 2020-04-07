@@ -23,11 +23,11 @@ export const Center = ({ children }: { children: React.ReactNode }) => (
 );
 export const Column = ({
   center,
-  customStyles,
+  styles: customStyles,
   children,
 }: {
   center?: boolean;
-  customStyles?: React.CSSProperties;
+  styles?: React.CSSProperties;
   children: React.ReactNode;
 }) => (
   <div
