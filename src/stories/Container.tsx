@@ -1,26 +1,41 @@
 import React from 'react';
 
-export const Margin = () => <div style={{ margin: '0 1rem' }} />;
-export const Vertical = () => <div style={{ margin: '0.5rem 0' }} />;
+const styles: { [key: string]: React.CSSProperties } = {
+  margin: {
+    margin: '0 1rem',
+  },
+  vertical: {
+    margin: '0.5rem 0',
+  },
+  center: {
+    textAlign: 'center',
+  },
+  flexBox: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+};
+
+export const Margin = () => <div style={styles.margin} />;
+export const Vertical = () => <div style={styles.vertical} />;
 export const Center = ({ children }: { children: React.ReactNode }) => (
-  <div style={{ textAlign: 'center' }}>{children}</div>
+  <div style={styles.center}>{children}</div>
 );
 export const Column = ({
   center,
-  styles,
+  customStyles,
   children,
 }: {
   center?: boolean;
-  styles?: React.CSSProperties;
+  customStyles?: React.CSSProperties;
   children: React.ReactNode;
 }) => (
   <div
     style={{
-      display: 'flex',
-      flexDirection: 'column',
+      ...styles.flexBox,
       justifyContent: center ? 'center' : 'initial',
       alignItems: center ? 'center' : 'initial',
-      ...styles,
+      ...customStyles,
     }}
   >
     {children}
