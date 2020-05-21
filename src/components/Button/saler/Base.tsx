@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { getColorPreset } from '../../util/getColorPreset';
 import { GRAY, ColorPreset } from '../../../colors';
+import Fonts from '../../../fonts';
 import { Event } from '../../../@types/EventEmitter.d';
 
 type Color = 'gray' | 'blue' | 'green' | 'yellow';
@@ -48,8 +49,7 @@ function SalerAdminBaseButton({
 }
 
 const Button = styled.button<{ colors: ColorPreset; disabled?: boolean }>`
-  font-family: Hiragino Sans;
-  font-size: 1rem;
+  ${Fonts.button.base}
   width: 216px;
   height: 52px;
   border-radius: 6px;
