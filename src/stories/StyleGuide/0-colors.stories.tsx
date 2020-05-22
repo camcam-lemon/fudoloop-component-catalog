@@ -1,10 +1,63 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../../components/Button/saler/Base';
 
 import { WHITE, NAVY, RED, GRAY, GREEN, BLUE, YELLOW, OVERLAY } from '../../colors';
 
 export default {
   title: 'スタイルガイド',
+};
+
+export const 色の組み合わせ = () => {
+  return (
+    <div>
+      <div>ボタンの配色</div>
+      <div>ボタンの色はGREEN, BLUE, GRAY, NAVYの中から使っています。</div>
+      <div>GREENカラーを例にとると</div>
+      <Block>
+        <Container>
+          <div>GREENカラー</div>
+          <Box color={WHITE} bgColor={GREEN.default}>
+            default color
+          </Box>
+          <Box color={WHITE} bgColor={GREEN.hover}>
+            hover color
+          </Box>
+          <Box color={WHITE} bgColor={GREEN.press}>
+            press color
+          </Box>
+        </Container>
+      </Block>
+      <div>としています。</div>
+      <div>色の濃さに応じてdefault,hover,pressを定義してます。</div>
+      <div>基本的に濃くなりますが、NAVYのみhoverカラーが薄くなっています。</div>
+      <div>また、各配色に対してテキストのカラーも決まっています。</div>
+      <Block>
+        <Button color="green" styles={{ marginRight: '1rem' }}>
+          GREEN
+        </Button>
+        <Button color="blue">BLUE</Button>
+      </Block>
+      <Block>
+        <Button color="yellow" styles={{ marginRight: '1rem' }}>
+          YELLOW
+        </Button>
+        <Button color="gray">GRAY</Button>
+      </Block>
+      <div>disabledのデザインは全て共通です。</div>
+      <Block>
+        <Button color="green" disabled>
+          disabled
+        </Button>
+      </Block>
+      <div>disabled時の色の組み合わせは</div>
+      <pre>
+        <code>background-color: #58b947; color: #95a5a6;</code>
+      </pre>
+      <div>となっております。</div>
+      <div>inputやcheckboxなどもdisabledの色の組み合わせは同じですが、一部例外があります。</div>
+    </div>
+  );
 };
 
 export const カラープリセット = () => {
@@ -97,6 +150,12 @@ export const カラープリセット = () => {
     </>
   );
 };
+
+const Block = styled.div`
+  display: block;
+  text-align: center;
+  margin: 1rem;
+`;
 
 const Container = styled.div`
   display: inline-flex;
