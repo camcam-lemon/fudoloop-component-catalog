@@ -9,7 +9,7 @@ export default {
 };
 
 export const ゴミ箱アイコン = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <DeleteIcon />
     <DeleteIcon fill={RED.default} />
   </div>

@@ -9,7 +9,7 @@ export default {
 };
 
 export const ログアウトアイコン = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <LogoutIcon />
   </div>
 );

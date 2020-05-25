@@ -9,7 +9,7 @@ export default {
 };
 
 export const 上矢印アイコン = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <ArrowUpIcon color="green" />
   </div>
 );

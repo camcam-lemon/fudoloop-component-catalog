@@ -31,7 +31,7 @@ const THead = styled.thead`
   font-size: 16px;
   letter-spacing: -0.4px;
   color: ${WHITE};
-  background-color: ${NAVY.dark};
+  background-color: ${NAVY.press};
   border: unset;
 `;
 const Tr = styled.tr<{ second?: boolean }>`

@@ -9,19 +9,19 @@ export default {
 };
 
 export const デフォルト = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <InformationIcon />
   </div>
 );
 
 export const 使用不可カラー = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <InformationIcon disabled />
   </div>
 );
 
 export const fudoloopカラー = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <InformationIcon color="green" />
     <InformationIcon color="blue" />
     <InformationIcon color="gray" />
@@ -34,7 +34,7 @@ export const サイズ変更 = () => (
     style={{
       display: 'flex',
       alignItems: 'center',
-      backgroundColor: NAVY.dark,
+      backgroundColor: NAVY.press,
     }}
   >
     <InformationIcon size="40px" />

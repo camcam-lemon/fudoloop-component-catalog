@@ -9,25 +9,25 @@ export type AlphaColorPreset = {
   '30%': string;
   '50%': string;
 };
-export type Color = 'green' | 'blue' | 'yellow' | 'gray';
+export type Color = 'green' | 'blue' | 'yellow' | 'gray' | 'navy';
 
 // パーソナルカラー
 export const WHITE = '#FFFFFF';
-export const NAVY = {
-  default: '#34495e',
-  hover: '#5C6D7E',
-  dark: '#2c3e50',
-};
-
 export const RED = {
   default: '#ff4242',
 };
 
+export const NAVY = {
+  default: '#34495e',
+  hover: '#5C6D7E',
+  press: '#2c3e50',
+  font: WHITE,
+};
 export const GRAY = {
   default: '#ecf0f1',
   hover: '#bdc3c7',
   press: '#95a5a6',
-  font: NAVY.dark,
+  font: NAVY.press,
 };
 export const GREEN = {
   default: '#58b947',
@@ -45,7 +45,7 @@ export const YELLOW = {
   default: '#ffbb42',
   hover: '#f6a411',
   press: '#e09102',
-  font: NAVY.dark,
+  font: NAVY.press,
 };
 
 // パーソナルアルファカラー

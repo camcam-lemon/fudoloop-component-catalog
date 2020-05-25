@@ -9,7 +9,7 @@ export default {
 };
 
 export const 情報アイコン = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <InformationIcon />
   </div>
 );

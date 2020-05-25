@@ -10,6 +10,7 @@ import {
   GREEN_ALPHA,
   BLUE_ALPHA,
   YELLOW_ALPHA,
+  NAVY,
 } from '../../colors';
 
 type Variant = 'contained' | 'outlined' | 'text';
@@ -28,6 +29,8 @@ export const getColorPreset = (color: Color) => {
       return BLUE;
     case 'yellow':
       return YELLOW;
+    case 'navy':
+      return NAVY;
     default:
       return GRAY;
   }

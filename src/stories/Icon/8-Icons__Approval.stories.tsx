@@ -9,7 +9,7 @@ export default {
 };
 
 export const 使用可能アイコン = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <ApprovalIcon />
   </div>
 );

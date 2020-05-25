@@ -47,7 +47,7 @@ export const カスタムカラー = () => (
     <Vertical />
     <Checkbox color="yellow">イエローかしら?</Checkbox>
     <Vertical />
-    <Checkbox color="gray" styles={{ backgroundColor: NAVY.dark }}>
+    <Checkbox color="gray" styles={{ backgroundColor: NAVY.press }}>
       グレーかしら?
     </Checkbox>
   </Column>

@@ -9,7 +9,7 @@ export default {
 };
 
 export const 設定アイコン = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <SettingIcon />
   </div>
 );

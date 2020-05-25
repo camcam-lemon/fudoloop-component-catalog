@@ -71,7 +71,7 @@ const Button = styled.button<Pick<FabAddProps, 'right' | 'left' | 'bottom'>>`
   font-family: Hiragino Sans;
   font-size: 1rem;
   background-color: ${YELLOW.default};
-  color: ${NAVY.dark};
+  color: ${NAVY.press};
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -100,7 +100,7 @@ const Vertical = styled.div<{ disabled?: boolean }>`
   right: 0;
   left: 0;
   margin: auto;
-  background-color: ${({ disabled }) => (disabled ? GRAY.hover : NAVY.dark)};
+  background-color: ${({ disabled }) => (disabled ? GRAY.hover : NAVY.press)};
   border: none;
 `;
 const Horizontal = styled.div<{ disabled?: boolean }>`
@@ -112,7 +112,7 @@ const Horizontal = styled.div<{ disabled?: boolean }>`
   right: 0;
   left: 0;
   margin: auto;
-  background-color: ${({ disabled }) => (disabled ? GRAY.hover : NAVY.dark)};
+  background-color: ${({ disabled }) => (disabled ? GRAY.hover : NAVY.press)};
   border: none;
 `;
 Button.displayName = 'Button';

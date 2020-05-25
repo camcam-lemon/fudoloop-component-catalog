@@ -9,7 +9,7 @@ export default {
 };
 
 export const 表示アイコン = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <VisibleIcon />
   </div>
 );

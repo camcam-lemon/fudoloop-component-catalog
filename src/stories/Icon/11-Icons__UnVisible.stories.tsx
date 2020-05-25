@@ -9,7 +9,7 @@ export default {
 };
 
 export const 非表示アイコン = () => (
-  <div style={{ backgroundColor: NAVY.dark }}>
+  <div style={{ backgroundColor: NAVY.press }}>
     <UnvisibleIcon />
   </div>
 );

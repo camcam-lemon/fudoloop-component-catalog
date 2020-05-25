@@ -47,7 +47,7 @@ const Container = styled.header`
   left: auto;
   right: 0;
   z-index: 1000;
-  background-color: ${NAVY.dark};
+  background-color: ${NAVY.press};
 `;
 const Wrapper = styled.div`
   display: flex;

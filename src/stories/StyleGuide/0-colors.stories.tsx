@@ -66,13 +66,13 @@ export const カラープリセット = () => {
       <Container>
         <div>NAVYカラー</div>
         <Box color={WHITE} bgColor={NAVY.default}>
-          {NAVY.dark}
+          {NAVY.press}
         </Box>
         <Box color={WHITE} bgColor={NAVY.hover}>
           {NAVY.hover}
         </Box>
-        <Box color={WHITE} bgColor={NAVY.dark}>
-          {NAVY.dark}
+        <Box color={WHITE} bgColor={NAVY.press}>
+          {NAVY.press}
         </Box>
       </Container>
       <Container>
@@ -125,13 +125,13 @@ export const カラープリセット = () => {
       </Container>
       <Container>
         <div>OVERLAYカラー</div>
-        <Box color={NAVY.dark} bgColor={OVERLAY['10%']}>
+        <Box color={NAVY.press} bgColor={OVERLAY['10%']}>
           {OVERLAY['10%']}
         </Box>
-        <Box color={NAVY.dark} bgColor={OVERLAY['30%']}>
+        <Box color={NAVY.press} bgColor={OVERLAY['30%']}>
           {OVERLAY['30%']}
         </Box>
-        <Box color={NAVY.dark} bgColor={OVERLAY['50%']}>
+        <Box color={NAVY.press} bgColor={OVERLAY['50%']}>
           {OVERLAY['50%']}
         </Box>
       </Container>
@@ -143,8 +143,8 @@ export const カラープリセット = () => {
       </Container>
       <Container>
         <div>WHITEカラー</div>
-        <Box border color={NAVY.dark} bgColor={WHITE}>
-          {NAVY.dark}
+        <Box border color={NAVY.press} bgColor={WHITE}>
+          {NAVY.press}
         </Box>
       </Container>
     </>

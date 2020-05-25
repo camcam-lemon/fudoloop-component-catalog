@@ -48,7 +48,7 @@ const Button = styled.button<{ colors: ColorPreset; disabled?: boolean }>`
   border: solid 1px ${GRAY.hover};
   border-radius: 6px;
   background-color: ${({ colors }) => colors.default};
-  color: ${NAVY.dark};
+  color: ${NAVY.press};
   font-size: 1rem;
   font-family: Hiragino Sans;
   cursor: pointer;
