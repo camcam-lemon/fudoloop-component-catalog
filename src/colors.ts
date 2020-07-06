@@ -15,6 +15,8 @@ export type Color = 'green' | 'blue' | 'yellow' | 'gray' | 'navy';
 export const WHITE = '#FFFFFF';
 export const RED = {
   default: '#ff4242',
+  hover: '#CC3535',
+  press: '#8F2525',
 };
 
 export const NAVY = {

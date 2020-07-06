@@ -140,6 +140,12 @@ export const カラープリセット = () => {
         <Box color={WHITE} bgColor={RED.default}>
           {RED.default}
         </Box>
+        <Box color={WHITE} bgColor={RED.hover}>
+          {RED.hover}
+        </Box>
+        <Box color={WHITE} bgColor={RED.press}>
+          {RED.press}
+        </Box>
       </Container>
       <Container>
         <div>WHITEカラー</div>
